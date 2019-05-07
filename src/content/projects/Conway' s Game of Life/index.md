@@ -1,6 +1,6 @@
 ---
 date: '2017-11-01'
-title: 'Conway/' s Game of Life'
+title: 'Game of Life of Conway'
 image: ''
 github: 'https://github.com/fermarval/Conway-s-Game-of-Life'
 external: ''
