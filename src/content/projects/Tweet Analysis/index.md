@@ -2,8 +2,8 @@
 date: '2017-12-01'
 title: 'Tweet Analysis'
 image: ''
-github: ''
-external: 'https://github.com/fermarval/Tweet-Analysis'
+github: 'https://github.com/fermarval/Tweet-Analysis'
+external: ''
 tech:
   - Scala
   - Spark
