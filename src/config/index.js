@@ -55,7 +55,7 @@ module.exports = {
   ],
 
   twitterHandle: '',
-  googleAnalyticsID: '',
+  googleAnalyticsID: 'UA-90613598-4',
 
   navHeight: 100,
 
