@@ -1,7 +1,7 @@
 module.exports = {
   siteTitle: 'Fernando Marmolejo | Software Developer',
   siteDescription:
-    'Fernando Marmolejo is a computer engineer based in Seville who works as software developer making mobile apps run and look good.',
+    'Fernando Marmolejo is a computer engineer based in Seville who works as software developer making mobile apps look good.',
   siteKeywords:
     'Fernando Marmolejo, fermarval, software developer, front-end engineer, web developer, javascript, northeastern',
   siteUrl: 'https://marmolejo.me',
