@@ -1,64 +1,61 @@
 module.exports = {
-  siteTitle: 'Fernando Marmolejo | Software Developer',
+  siteTitle: 'Brittany Chiang | Software Engineer',
   siteDescription:
-    'Fernando Marmolejo is a computer engineer based in Seville who works as software developer making mobile apps look good.',
+    'Brittany Chiang is a software engineer based in Boston, MA who specializes in developing (and occasionally designing) exceptional, high-quality websites and applications.',
   siteKeywords:
-    'Fernando Marmolejo, fermarval, software developer, front-end engineer, web developer, javascript, northeastern',
-  siteUrl: 'https://marmolejo.me',
+    'Brittany Chiang, Brittany, Chiang, bchiang7, software engineer, front-end engineer, web developer, javascript, northeastern',
+  siteUrl: 'https://brittanychiang.com',
   siteLanguage: 'en_US',
-
-  googleVerification: '',
-
-  name: 'Fernando Marmolejo',
-  location: 'Seville',
-  email: 'fmarvallejo@gmail.com',
+  googleAnalyticsID: 'UA-45666519-2',
+  googleVerification: 'DCl7VAf9tcz6eD9gb67NfkNnJ1PKRNcg8qQiwpbx9Lk',
+  name: 'Brittany Chiang',
+  location: 'Boston, MA',
+  email: 'brittany.chiang@gmail.com',
+  github: 'https://github.com/bchiang7',
+  twitterHandle: '@bchiang7',
   socialMedia: [
     {
-      name: 'Github',
-      url: 'https://github.com/fermarval/',
+      name: 'GitHub',
+      url: 'https://github.com/bchiang7',
     },
     {
       name: 'Linkedin',
-      url: 'https://www.linkedin.com/in/fmarmolejo/',
+      url: 'https://www.linkedin.com/in/bchiang7',
     },
     {
       name: 'Codepen',
-      url: 'https://codepen.io/fermarval/',
+      url: 'https://codepen.io/bchiang7',
     },
     {
       name: 'Instagram',
-      url: 'https://www.instagram.com/femarval/',
+      url: 'https://www.instagram.com/bchiang7',
     },
     {
       name: 'Twitter',
-      url: 'https://twitter.com/femaval',
+      url: 'https://twitter.com/bchiang7',
     },
   ],
 
   navLinks: [
     {
       name: 'About',
-      url: '#about',
+      url: '/#about',
     },
     {
       name: 'Experience',
-      url: '#jobs',
+      url: '/#jobs',
     },
     {
       name: 'Work',
-      url: '#projects',
+      url: '/#projects',
     },
     {
       name: 'Contact',
-      url: '#contact',
+      url: '/#contact',
     },
   ],
 
-  twitterHandle: '',
-  googleAnalyticsID: 'UA-90613598-4',
-
   navHeight: 100,
-
   greenColor: '#64ffda',
   navyColor: '#0a192f',
   darkNavyColor: '#020c1b',

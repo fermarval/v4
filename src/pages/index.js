@@ -3,27 +3,27 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import { Layout, Hero, About, Jobs, Featured, Projects, Contact } from '@components';
 import styled from 'styled-components';
-import { mixins, Main } from '@styles';
+import { Main } from '@styles';
 
-const MainContainer = styled(Main)`
-  ${mixins.sidePadding};
+const StyledMainContainer = styled(Main)`
   counter-reset: section;
 `;
 
-const IndexPage = ({ data }) => (
-  <Layout>
-    <MainContainer id="content">
+const IndexPage = ({ location, data }) => (
+  <Layout location={location}>
+    <StyledMainContainer className="fillHeight">
       <Hero data={data.hero.edges} />
       <About data={data.about.edges} />
       <Jobs data={data.jobs.edges} />
       <Featured data={data.featured.edges} />
       <Projects data={data.projects.edges} />
       <Contact data={data.contact.edges} />
-    </MainContainer>
+    </StyledMainContainer>
   </Layout>
 );
 
 IndexPage.propTypes = {
+  location: PropTypes.object.isRequired,
   data: PropTypes.object.isRequired,
 };
 
@@ -97,25 +97,25 @@ export const pageQuery = graphql`
             tech
             github
             external
-            show
           }
           html
         }
       }
     }
     projects: allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/projects/" } }
+      filter: {
+        fileAbsolutePath: { regex: "/projects/" }
+        frontmatter: { showInProjects: { ne: false } }
+      }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
         node {
           frontmatter {
             title
-            image
             tech
             github
             external
-            show
           }
           html
         }

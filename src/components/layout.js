@@ -6,6 +6,12 @@ import styled from 'styled-components';
 import { GlobalStyle, theme } from '@styles';
 const { colors, fontSizes, fonts } = theme;
 
+// https://medium.com/@chrisfitkin/how-to-smooth-scroll-links-in-gatsby-3dc445299558
+if (typeof window !== 'undefined') {
+  // eslint-disable-next-line global-require
+  require('smooth-scroll')('a[href*="#"]');
+}
+
 const SkipToContent = styled.a`
   position: absolute;
   top: auto;
@@ -24,7 +30,7 @@ const SkipToContent = styled.a`
     background-color: ${colors.lightNavy};
     border-radius: ${theme.borderRadius};
     padding: 18px 23px;
-    font-size: ${fontSizes.small};
+    font-size: ${fontSizes.sm};
     font-family: ${fonts.SFMono};
     line-height: 1;
     text-decoration: none;
@@ -38,25 +44,31 @@ const SkipToContent = styled.a`
     z-index: 99;
   }
 `;
+const StyledContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`;
 
-const Layout = ({ children }) => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [githubInfo, setGithubInfo] = useState({
-    stars: null,
-    forks: null,
-  });
+const Layout = ({ children, location }) => {
+  const isHome = location.pathname === '/';
+  const [isLoading, setIsLoading] = useState(isHome);
 
   useEffect(() => {
-    fetch('https://api.github.com/repos/bchiang7/v4')
-      .then(response => response.json())
-      .then(json => {
-        const { stargazers_count, forks_count } = json;
-        setGithubInfo({
-          stars: stargazers_count,
-          forks: forks_count,
-        });
-      });
-  }, []);
+    if (isLoading) {
+      return;
+    }
+    if (location.hash) {
+      const id = location.hash.substring(1); // location.hash without the '#'
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView();
+          el.focus();
+        }
+      }, 0);
+    }
+  }, [isLoading]);
 
   return (
     <StaticQuery
@@ -79,16 +91,19 @@ const Layout = ({ children }) => {
 
           <SkipToContent href="#content">Skip to Content</SkipToContent>
 
-          {isLoading ? (
+          {isLoading && isHome ? (
             <Loader finishLoading={() => setIsLoading(false)} />
           ) : (
-            <div className="container">
-              <Nav />
-              <Social />
-              <Email />
-              {children}
-              <Footer githubInfo={githubInfo} />
-            </div>
+            <StyledContent>
+              <Nav isHome={isHome} />
+              <Social isHome={isHome} />
+              <Email isHome={isHome} />
+
+              <div id="content">
+                {children}
+                <Footer />
+              </div>
+            </StyledContent>
           )}
         </div>
       )}
@@ -98,6 +113,7 @@ const Layout = ({ children }) => {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  location: PropTypes.object.isRequired,
 };
 
 export default Layout;

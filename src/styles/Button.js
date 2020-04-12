@@ -7,13 +7,13 @@ const Button = styled.button`
   background-color: transparent;
   border: 1px solid ${colors.green};
   border-radius: ${theme.borderRadius};
-  font-size: ${fontSizes.smallish};
+  font-size: ${fontSizes.smish};
   font-family: ${fonts.SFMono};
   line-height: 1;
   text-decoration: none;
   cursor: pointer;
   transition: ${theme.transition};
-  padding: 18px 23px;
+  padding: 1.25rem 1.75rem;
 
   &:hover,
   &:focus,

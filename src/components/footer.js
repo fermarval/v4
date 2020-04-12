@@ -1,20 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import {
-  IconGithub,
-  IconLinkedin,
-  IconCodepen,
-  IconInstagram,
-  IconTwitter,
-  IconStar,
-  IconFork,
-} from '@components/icons';
+import { FormattedIcon } from '@components/icons';
 import { socialMedia } from '@config';
 import styled from 'styled-components';
 import { theme, mixins, media } from '@styles';
 const { colors, fontSizes, fonts } = theme;
 
-const FooterContainer = styled.footer`
+const StyledContainer = styled.footer`
   ${mixins.flexCenter};
   flex-direction: column;
   padding: 15px;
@@ -24,7 +16,7 @@ const FooterContainer = styled.footer`
   height: auto;
   min-height: 70px;
 `;
-const SocialContainer = styled.div`
+const StyledSocial = styled.div`
   color: ${colors.lightSlate};
   width: 100%;
   max-width: 270px;
@@ -32,26 +24,29 @@ const SocialContainer = styled.div`
   display: none;
   ${media.tablet`display: block;`};
 `;
-const SocialItemList = styled.ul`
+const StyledSocialList = styled.ul`
   ${mixins.flexBetween};
+  padding: 0;
+  margin: 0;
+  list-style: none;
 `;
-const SocialLink = styled.a`
+const StyledSocialLink = styled.a`
   padding: 10px;
   svg {
     width: 20px;
     height: 20px;
   }
 `;
-const Copy = styled.div`
-  margin: 10px 0;
+const StyledMetadata = styled.div`
   font-family: ${fonts.SFMono};
-  font-size: ${fontSizes.xsmall};
+  font-size: ${fontSizes.xs};
   line-height: 1;
 `;
-const GithubLink = styled.a`
+const StyledGitHubLink = styled.a`
   color: ${colors.slate};
+  padding: 10px;
 `;
-const GithubInfo = styled.div`
+const StyledGitHubInfo = styled.div`
   margin-top: 10px;
 
   & > span {
@@ -67,59 +62,70 @@ const GithubInfo = styled.div`
   }
 `;
 
-const Footer = ({ githubInfo }) => (
-  <FooterContainer>
-    <SocialContainer>
-      <SocialItemList>
-        {socialMedia &&
-          socialMedia.map(({ name, url }, i) => (
-            <li key={i}>
-              <SocialLink
-                href={url}
-                target="_blank"
-                rel="nofollow noopener noreferrer"
-                aria-label={name}>
-                {name === 'Github' ? (
-                  <IconGithub />
-                ) : name === 'Linkedin' ? (
-                  <IconLinkedin />
-                ) : name === 'Codepen' ? (
-                  <IconCodepen />
-                ) : name === 'Instagram' ? (
-                  <IconInstagram />
-                ) : name === 'Twitter' ? (
-                  <IconTwitter />
-                ) : (
-                  <IconGithub />
-                )}
-              </SocialLink>
-            </li>
-          ))}
-      </SocialItemList>
-    </SocialContainer>
-    <Copy>
-      <GithubLink
-        href="https://github.com/bchiang7/v4"
-        target="_blank"
-        rel="nofollow noopener noreferrer">
-        <div>Designed &amp; Built by Brittany Chiang</div>
+const Footer = () => {
+  const [githubInfo, setGitHubInfo] = useState({
+    stars: null,
+    forks: null,
+  });
 
-        {githubInfo.stars && githubInfo.forks && (
-          <GithubInfo>
-            <span>
-              <IconStar />
-              <span>{githubInfo.stars}</span>
-            </span>
-            <span>
-              <IconFork />
-              <span>{githubInfo.forks}</span>
-            </span>
-          </GithubInfo>
-        )}
-      </GithubLink>
-    </Copy>
-  </FooterContainer>
-);
+  useEffect(() => {
+    if (process.env.NODE_ENV !== 'production') {
+      return;
+    }
+    fetch('https://api.github.com/repos/bchiang7/v4')
+      .then(response => response.json())
+      .then(json => {
+        const { stargazers_count, forks_count } = json;
+        setGitHubInfo({
+          stars: stargazers_count,
+          forks: forks_count,
+        });
+      })
+      .catch(e => console.error(e));
+  }, []);
+
+  return (
+    <StyledContainer>
+      <StyledSocial>
+        <StyledSocialList>
+          {socialMedia &&
+            socialMedia.map(({ name, url }, i) => (
+              <li key={i}>
+                <StyledSocialLink
+                  href={url}
+                  target="_blank"
+                  rel="nofollow noopener noreferrer"
+                  aria-label={name}>
+                  <FormattedIcon name={name} />
+                </StyledSocialLink>
+              </li>
+            ))}
+        </StyledSocialList>
+      </StyledSocial>
+      <StyledMetadata tabindex="-1">
+        <StyledGitHubLink
+          href="https://github.com/bchiang7/v4"
+          target="_blank"
+          rel="nofollow noopener noreferrer">
+          <div>Designed &amp; Built by Brittany Chiang</div>
+
+          {githubInfo.stars && githubInfo.forks && (
+            <StyledGitHubInfo>
+              <span>
+                <FormattedIcon name="Star" />
+                <span>{githubInfo.stars}</span>
+              </span>
+              <span>
+                <FormattedIcon name="Fork" />
+                <span>{githubInfo.forks}</span>
+              </span>
+            </StyledGitHubInfo>
+          )}
+        </StyledGitHubLink>
+      </StyledMetadata>
+    </StyledContainer>
+  );
+};
 
 Footer.propTypes = {
   githubInfo: PropTypes.object,
