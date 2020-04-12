@@ -1,18 +1,20 @@
 ---
 title: 'About Me'
-avatar: './me.jpg'
+avatar: ''
 skills:
-  - JavaScript (ES6+)
-  - HTML & (S)CSS
-  - React
-  - Vue
+  - JavaScript
+  - HTML & SCSS
   - Node.js
-  - Express
-  - NativeScript
+  - PHP
+  - SQL
+  - Wordpress
+  - Bash
+  - Git & Github
+  - Chrome DevTools
 ---
 
-Hello! I'm Brittany, a software engineer based in Boston, MA who enjoys building things that live on the internet. I develop exceptional websites and web apps that provide intuitive, pixel-perfect user interfaces with efficient and modern backends.
+Hello! I'm Fernando. I'm currently work as Software Developer at Publi Runner building things for mobile platforms. In 2018 I graduated from the University of Seville with a Bachelor's Degree in Computer Engineering.
 
-Shortly after graduating from [Northeastern University](https://www.ccis.northeastern.edu/), I joined the engineering team at [Upstatement](https://www.upstatement.com/) where I work on a wide variety of interesting and meaningful projects on a daily basis.
+As a software engineer, I enjoy closing the gap between engineering and design, always taking care of the appearance and usability of the applications I develop. My goal is always to create applications that are scalable and efficient under the hood, while providing attractive user experiences.
 
-Here are a few technologies I've been working with recently:
+Here's a few technologies I've been working with recently:
