@@ -8,6 +8,7 @@ skills:
   - PHP
   - SQL
   - Wordpress
+  - Drupal 8
   - Bash
   - Git & Github
   - Chrome DevTools
