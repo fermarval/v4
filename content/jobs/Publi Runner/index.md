@@ -1,6 +1,6 @@
 ---
 date: '2019-05-07'
-title: 'Software Developer'
+title: 'Full-Stack Mobile App Developer'
 company: 'Publi Runner'
 location: 'Mairena del Aljarafe, Seville'
 range: 'July 2018 - Current'
