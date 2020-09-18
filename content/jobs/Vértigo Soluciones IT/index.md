@@ -1,9 +1,9 @@
 ---
 date: '2019-05-07'
 title: 'Full-Stack Web Developer'
-company: 'VÃ©rtigo Soluciones IT'
+company: 'Vértigo Soluciones IT'
 location: 'Mairena del Aljarafe, Seville'
-range: 'July 2018 - Current'
+range: 'July 2019 - Current'
 url: 'https://www.vertigosolucionesit.com'
 ---
 
