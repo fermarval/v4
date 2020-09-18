@@ -7,9 +7,9 @@ skills:
   - Node.js
   - PHP
   - SQL
+  - Drupal
   - Wordpress
-  - Bash
-  - Git & Github
+  - Git
   - Chrome DevTools
 ---
 
