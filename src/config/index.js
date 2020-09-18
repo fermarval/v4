@@ -27,11 +27,11 @@ module.exports = {
     },
     {
       name: 'Instagram',
-      url: 'https://www.instagram.com/femarval/',
+      url: 'https://www.instagram.com/fermardev/',
     },
     {
       name: 'Twitter',
-      url: 'https://twitter.com/femaval',
+      url: 'https://twitter.com/fermardev',
     },
   ],
 
