@@ -108,19 +108,6 @@ const Footer = () => {
           target="_blank"
           rel="nofollow noopener noreferrer">
           <div>Built with Gatsby &amp; Designed by Brittany</div>
-
-          {githubInfo.stars && githubInfo.forks && (
-            <StyledGitHubInfo>
-              <span>
-                <FormattedIcon name="Star" />
-                <span>{githubInfo.stars}</span>
-              </span>
-              <span>
-                <FormattedIcon name="Fork" />
-                <span>{githubInfo.forks}</span>
-              </span>
-            </StyledGitHubInfo>
-          )}
         </StyledGitHubLink>
       </StyledMetadata>
     </StyledContainer>

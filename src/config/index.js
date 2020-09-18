@@ -4,14 +4,14 @@ module.exports = {
     'Fernando Marmolejo is a computer engineer based in Seville who works as software developer making mobile apps look good.',
   siteKeywords:
     'Fernando Marmolejo, fermarval, software developer, front-end engineer, web developer, javascript, northeastern',
-  siteUrl: 'https://marmolejo.me',
+  siteUrl: 'https://marmolejo.work',
   siteLanguage: 'en_US',
 
   googleVerification: '',
 
   name: 'Fernando Marmolejo',
   location: 'Seville',
-  email: 'fmarvallejo@gmail.com',
+  email: 'fernando@marmolejo.work',
   socialMedia: [
     {
       name: 'Github',
@@ -31,7 +31,7 @@ module.exports = {
     },
     {
       name: 'Twitter',
-      url: 'https://twitter.com/fermardev',
+      url: 'https://twitter.com/fermardev/',
     },
   ],
 
