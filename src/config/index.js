@@ -1,17 +1,6 @@
 module.exports = {
-  siteTitle: 'Fernando Marmolejo | Software Developer',
-  siteDescription:
-    'Fernando Marmolejo is a computer engineer based in Seville who works as software developer making mobile apps look good.',
-  siteKeywords:
-    'Fernando Marmolejo, fermarval, software developer, front-end engineer, web developer, javascript, northeastern',
-  siteUrl: 'https://marmolejo.work',
-  siteLanguage: 'en_US',
-
-  googleVerification: '',
-
-  name: 'Fernando Marmolejo',
-  location: 'Seville',
   email: 'fernando@marmolejo.work',
+
   socialMedia: [
     {
       name: 'Github',
@@ -38,32 +27,29 @@ module.exports = {
   navLinks: [
     {
       name: 'About',
-      url: '#about',
+      url: '/#about',
     },
     {
       name: 'Experience',
-      url: '#jobs',
+      url: '/#jobs',
     },
     {
       name: 'Work',
-      url: '#projects',
+      url: '/#projects',
     },
     {
       name: 'Contact',
-      url: '#contact',
+      url: '/#contact',
     },
   ],
 
-  twitterHandle: '',
-  googleAnalyticsID: 'UA-90613598-4',
+  colors: {
+    green: '#64ffda',
+    navy: '#0a192f',
+    darkNavy: '#020c1b',
+  },
 
-  navHeight: 100,
-
-  greenColor: '#64ffda',
-  navyColor: '#0a192f',
-  darkNavyColor: '#020c1b',
-
-  srConfig: (delay = 200) => ({
+  srConfig: (delay = 200, viewFactor = 0.25) => ({
     origin: 'bottom',
     distance: '20px',
     duration: 500,
@@ -75,7 +61,7 @@ module.exports = {
     mobile: true,
     reset: false,
     useDelay: 'always',
-    viewFactor: 0.25,
+    viewFactor,
     viewOffset: { top: 0, right: 0, bottom: 0, left: 0 },
   }),
 };
