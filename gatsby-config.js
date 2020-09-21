@@ -2,9 +2,11 @@ const config = require('./src/config');
 
 module.exports = {
   siteMetadata: {
-    title: config.siteTitle,
-    siteUrl: config.siteUrl,
-    description: config.siteDescription,
+    title: "Fernando Marmolejo | marmolejo.work",
+    description: 'Fernando Marmolejo is a computer engineer based in Seville who works as software developer making mobile apps look good.',
+    siteUrl: 'https://marmolejo.work',
+    image: 'og.png',
+    twitterUsername: '@fermardev',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -141,7 +143,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: config.googleAnalyticsID,
+        trackingId: 'UA-90613598-4',
       },
     },
   ],
