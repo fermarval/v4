@@ -37,6 +37,10 @@ module.exports = {
       name: 'Work',
       url: '/#projects',
     },
+     {
+      name: 'Blog',
+      url: 'https://blog.marmolejo.work',
+    },
     {
       name: 'Contact',
       url: '/#contact',
